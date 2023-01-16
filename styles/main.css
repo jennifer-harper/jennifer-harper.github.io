@@ -15,7 +15,6 @@ a, p, li {
     z-index: 1;
     line-height: 1.7em;
     font-size: 18px;
-    margin-bottom: 0; 
 }
       
 a:hover {
@@ -144,3 +143,44 @@ text-align: center;
     padding:4% 8%
 }
 
+/* html-css.html blog page */
+.html-css .styleP{
+    margin-top:4%
+}
+.html-css .paddingWrapper .paddingBox{
+    background-color: pink;
+}
+.html-css .paddingWrapper .paddingBox:last-of-type{
+    background-color: rgb(226, 151, 164);
+}
+
+.html-css .paddingWrapper .paddingBox p{
+    margin:0;
+}
+.html-css .paddingWrapper .paddingBox.padding{
+    padding:4%;
+}
+.html-css .paddingWrapper .paddingBox.margin{
+    margin:2% 4%;
+}
+.html-css .paddingWrapper .paddingBox.border{
+    border:10px solid #ff0000
+}
+
+.html-css .paddingWrapper .paddingBox h3 span{
+    border-bottom:2px solid #000;
+}
+
+.html-css .paddingWrapper:last-of-type .paddingBox:last-of-type p{
+    padding-top:30px;
+}
+
+@media (min-width:768px){
+    .html-css .paddingWrapper{
+        display: flex;
+    }
+    
+    .html-css .paddingWrapper .paddingBox{
+        width: 50%;
+    }
+}
