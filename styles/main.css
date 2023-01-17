@@ -173,7 +173,7 @@ text-align: center;
 }
 
 
-@media (min-width:768px){
+@media (min-width:769px){
     .intro.home .wrapper > div:first-of-type{
         display: flex;
         align-items: center;
