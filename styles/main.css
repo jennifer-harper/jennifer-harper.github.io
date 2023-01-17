@@ -160,14 +160,19 @@ text-align: center;
 .intro.home{
     text-align: center;
 }
-.intro.home .wrapper p a{
+.intro.home .wrapper p a span{
     font-size:30px;
     margin-left:10px;
     font-weight:bold;
+
 }
+
+.intro.home .wrapper p a:hover span,
 .intro.home .wrapper p a:hover{
     color:red
 }
+
+
 
 
 @media (min-width:768px){
@@ -176,6 +181,7 @@ text-align: center;
         align-items: center;
         justify-content: space-around;
     }
+    
 
 }
 
