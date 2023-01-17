@@ -13,7 +13,7 @@ a, p, li {
     font-size: 16px;
     position: relative;
     z-index: 1;
-    line-height: 1.7em;
+    line-height: 1.2em;
     font-size: 18px;
 
 }
@@ -174,13 +174,9 @@ text-align: center;
     .intro.home .wrapper{
         display: flex;
         align-items: center;
+        justify-content: space-around;
     }
-    .intro.home{
-        text-align: left;
-    }
-    .intro.home .wrapper .me{
-        margin-right:8%;
-    }
+
 }
 
 
