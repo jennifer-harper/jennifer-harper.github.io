@@ -173,21 +173,25 @@ text-align: center;
 }
 
 
-
-
 @media (min-width:768px){
-    .intro.home .wrapper{
+    .intro.home .wrapper > div:first-of-type{
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-evenly;
+    }
+    .intro.home .wrapper .me{
+        max-width: 400px;
+        margin: 0 20px 0;
     }
     
 
 }
 
 
-
-
+/* identity page */
+.intro.blog p b{
+    margin-top:8%;
+}
 
 
 /* html-css.html blog page */
@@ -231,3 +235,4 @@ text-align: center;
         width: 50%;
     }
 }
+
