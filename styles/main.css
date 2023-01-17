@@ -15,6 +15,7 @@ a, p, li {
     z-index: 1;
     line-height: 1.7em;
     font-size: 18px;
+
 }
       
 a:hover {
@@ -24,6 +25,7 @@ a:hover {
     
 p, p span, p a, a {
     color: #2d2929; 
+    text-decoration: none;
 }
     
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6,
@@ -60,6 +62,9 @@ h2 {
     } 
 }
 
+figure{
+    margin:0;
+}
 
 
 /* navigation  */
@@ -142,6 +147,46 @@ text-align: center;
 .intro{
     padding:4% 8%
 }
+
+.intro.home .wrapper .me{
+    max-width: 400px;
+    margin: 0 auto;
+}
+.intro.home .wrapper .me img{
+    width: 100%;
+    border-radius: 100%;
+}
+
+.intro.home{
+    text-align: center;
+}
+.intro.home .wrapper p a{
+    font-size:30px;
+    margin-left:10px;
+    font-weight:bold;
+}
+.intro.home .wrapper p a:hover{
+    color:red
+}
+
+
+@media (min-width:768px){
+    .intro.home .wrapper{
+        display: flex;
+        align-items: center;
+    }
+    .intro.home{
+        text-align: left;
+    }
+    .intro.home .wrapper .me{
+        margin-right:8%;
+    }
+}
+
+
+
+
+
 
 /* html-css.html blog page */
 .html-css .styleP{
