@@ -144,7 +144,7 @@ text-align: center;
  }
 
 /* Intro Home page */
-.intro{
+.intro:not(.home){
     padding:4% 8%;
     max-width:800px
 }
@@ -160,6 +160,7 @@ text-align: center;
 
 .intro.home{
     text-align: center;
+
 }
 .intro.home .wrapper p a span{
     font-size:30px;
