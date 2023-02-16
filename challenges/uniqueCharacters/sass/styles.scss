@@ -3,9 +3,14 @@
 @import url("https://d2ta2fpo91apla.cloudfront.net/fontawesome-free-5.9.0-web/css/all.min.css");
 
 
-// see main.css for All styles
-
-.maths{
+.unique{
   max-width:600px;
-  margin:0 auto
+  margin:0 auto;
+  div{
+    display: flex;
+    input{
+      width:100%;
+      height:30px;
+    }
+  }
 }
