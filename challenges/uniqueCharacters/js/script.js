@@ -17,6 +17,7 @@ function uniqueString() {
     let getString = document.getElementById("userInput").value;
     let splitString = getString.toLowerCase().split('');
     let answerString = [];
+   //The keys of this object are the characters in the input string, and the values are the number of times each character appears in the string
     let charFreq = {};
   
     // Calculate the frequency of each character
