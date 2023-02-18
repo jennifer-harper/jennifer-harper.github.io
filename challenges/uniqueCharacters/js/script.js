@@ -13,32 +13,6 @@ document.getElementById("userInput").addEventListener("keyup", function(event) {
     }
   });  
 
-
-
-//   function uniqueString(){
-    
-//     let getString = document.getElementById("userInput").value;
-//     let splitString = getString.toLowerCase().split('');
-//     let answerString = [];
-
-//     for (let i = 0; i < splitString.length; i++){
-//         let currentChar = splitString[i];
-//         if (splitString.indexOf(currentChar) === splitString.lastIndexOf(currentChar)){
-//             answerString.push(currentChar);
-//         }
-//     }
-
-//     if (answerString.length === 0) {
-//         responseUnique.innerHTML = "No unique chars";
-//     } else {
-//         responseUnique.innerHTML = answerString.join(' ');
-//     }
-   
-//     document.getElementById("userInput").value = "";
-//     response.innerHTML = getString;     
-    
-// }
-
 function uniqueString() {
     let getString = document.getElementById("userInput").value;
     let splitString = getString.toLowerCase().split('');
@@ -67,7 +41,8 @@ function uniqueString() {
     } else {
       responseUnique.innerHTML = answerString.join(' ');
     }
-  
+
     response.innerHTML = getString; 
+    document.getElementById("userInput").value = '';
   }
   
