@@ -1,0 +1,181 @@
+body {
+  margin:0;
+  padding:0;
+  height: 100%;
+  background-color: #161d2b;
+  font-family: 'Raleway', serif;
+  color:#fff1db;
+  
+}
+
+
+p{
+  line-height: 1.6em;
+}
+a{
+  color:#fff1db;
+}
+h1{
+  text-align: center;
+  font-size: 2.5em;
+  letter-spacing: 2px;
+}
+h2{
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+img.small{
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  margin: auto;
+  width: 100%; 
+  text-align: center; 
+
+}
+
+
+
+.container:before{
+  content: '';
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; 
+  z-index: -1;
+}
+
+.container.home{
+  background-image: url(./images/bg-stars.svg); 
+}
+.container.home:before{
+  background-image: url(./images/bg-stars2.svg);
+}
+
+
+.fortune-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 80%;
+}
+@media (min-width:800px){
+  .fortune-wrapper{
+    flex-wrap: nowrap;
+  } 
+}
+
+.fortune-each a,
+.fortune-each {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  height:100%
+}
+
+.img-circle{
+  max-width: 360px;
+}
+
+.fortune-each a:hover h2{
+  letter-spacing: 6px;
+}
+
+.fortune-each a h2,
+.fortune-each a:hover h2{
+  transition: all 0.5s ease-in-out;
+}
+
+
+
+/* forms */
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+form label{
+  margin-bottom: 20px;
+}
+
+form input[type=submit]{
+  margin-top: 6px;
+}
+
+form input{
+  height: 40px;
+  padding: 0 30px;
+  border:none
+}
+
+form input[type=submit],
+a button{
+  font-weight: bold;
+  color: white;
+  transition: background-color .3s ease-in-out;
+  border:none
+}
+
+.container.fortune form input[type=submit],
+.container.fortune a button{
+  background-color:#4c1df6
+}
+
+.container.love form input[type=submit],
+.container.love a button{
+  background-color:#ff2ee3
+}
+
+.container.numbers form input[type=submit],
+.container.numbers a button{
+  background-color:#5effe9;
+  color:#000;
+}
+
+.fortune form input[type=submit]:hover,
+.fortune a:hover button,
+.love form input[type=submit]:hover,
+.love a:hover button,
+.numbers form input[type=submit]:hover,
+.numbers a:hover button{
+  transition: background-color .3s ease-in-out;
+  background-color:#f28c36;
+}
+
+a button{
+  padding: 20px;
+  min-width: 160px;
+}
+
+
+@keyframes fade {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
