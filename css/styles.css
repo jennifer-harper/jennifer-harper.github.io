@@ -1,4 +1,5 @@
 @import url("https://d2ta2fpo91apla.cloudfront.net/fontawesome-free-5.9.0-web/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@100;600&display=swap");
 *,
 *::before {
   box-sizing: border-box; }
@@ -42,13 +43,12 @@ p, p span, p a, a {
   color: #fff; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montagu Slab", serif;
   font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase; }
+  letter-spacing: 1px; }
 
 h1 {
-  font-size: 60px; }
+  font-size: 50px; }
   @media (max-width: 1140px) {
     h1 {
       font-size: calc(16px + 2vw); } }
@@ -143,11 +143,11 @@ figure {
     left: 0;
     -o-object-fit: cover;
     object-fit: cover;
-    -o-object-position: 50% 50%;
-    object-position: 50% 50%; }
+    -o-object-position: 50% 0%;
+    object-position: 50% 0%; }
   @media (min-width: 992px) {
     .media-box {
-      min-height: 95vh;
+      min-height: 100vh;
       height: 100%; } }
 
 figure {
@@ -180,41 +180,68 @@ svg {
       min-height: 40vh; } }
 
 /*******************************/
-/* Intro all pages except home */
-.intro:not(.home) {
-  padding: 4% 8%;
-  max-width: 800px; }
-
 /* Intro Home */
 .intro.home {
-  text-align: center;
   min-height: calc(100vh - 100px);
   display: flex; }
+  @media (min-height: 1366px) and (max-height: 1367px) {
+    .intro.home {
+      min-height: auto; } }
   .intro.home .wrapper {
-    width: 100%; }
-    .intro.home .wrapper .me {
-      max-width: 400px;
-      margin: 0 auto; }
-      .intro.home .wrapper .me img {
-        width: 100%;
-        border-radius: 100%; }
-      @media (min-width: 769px) {
-        .intro.home .wrapper .me {
-          max-width: 400px;
-          margin: 0 20px 0; } }
-    .intro.home .wrapper p {
-      padding: 20px; }
-      .intro.home .wrapper p a span {
-        font-size: 30px;
-        margin-left: 10px;
-        font-weight: bold; }
-      .intro.home .wrapper p a:hover span,
-      .intro.home .wrapper p a:hover {
-        color: red; }
-    @media (min-width: 769px) {
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    max-width: 1300px;
+    margin: 0 auto; }
+    .intro.home .wrapper .visual div {
+      position: relative; }
+      .intro.home .wrapper .visual div .media-box {
+        min-height: 50vh; }
+      .intro.home .wrapper .visual div .me img {
+        width: 100%; }
+      .intro.home .wrapper .visual div .dev-logo {
+        max-width: 100px;
+        position: absolute;
+        left: -20px;
+        bottom: -20px;
+        z-index: 1; }
+    .intro.home .wrapper .content {
+      padding: 4%; }
+      .intro.home .wrapper .content p {
+        max-width: 700px;
+        margin: 0 auto 20px; }
+        .intro.home .wrapper .content p a span {
+          font-size: 30px;
+          margin-left: 10px;
+          font-weight: bold; }
+        .intro.home .wrapper .content p a:hover span,
+        .intro.home .wrapper .content p a:hover {
+          color: red; }
+    @media (min-width: 1024px) {
       .intro.home .wrapper {
         display: flex;
-        align-items: center;
-        justify-content: space-evenly; } }
+        text-align: left;
+        align-items: center; }
+        .intro.home .wrapper .visual {
+          position: relative;
+          width: 50vw; }
+          .intro.home .wrapper .visual div .dev-logo {
+            max-width: 150px; }
+          .intro.home .wrapper .visual div .media-box {
+            min-height: 60vh; }
+        .intro.home .wrapper .content {
+          width: 50vw;
+          margin: 0 20px 20px; }
+          .intro.home .wrapper .content p {
+            max-width: 750px;
+            margin: 0 0 20px 0; } }
+    @media (min-width: 1200px) {
+      .intro.home .wrapper .visual {
+        width: 40vw; }
+      .intro.home .wrapper .content {
+        width: 60vw; } }
+    @media (min-width: 1600px) {
+      .intro.home .wrapper .visual .media-box {
+        min-height: 55vh; } }
 
 /*# sourceMappingURL=styles.css.map */
