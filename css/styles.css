@@ -26,9 +26,10 @@ a, p, li {
   font-size: 16px;
   position: relative;
   z-index: 1;
-  line-height: 1.7em;
+  line-height: 1.9em;
   font-size: 18px;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  text-decoration: none; }
 
 a:hover {
   color: #2d2929;
@@ -54,8 +55,7 @@ h1 {
 
 h2 {
   color: #2d2929;
-  font-size: 30px;
-  font-weight: 400; }
+  font-size: 30px; }
   @media (max-width: 992px) {
     h2 {
       font-size: calc(16px + 2vw); } }
@@ -181,12 +181,23 @@ svg {
 /*******************************/
 button.github {
   display: flex;
-  margin-top: 30px;
+  margin: 30px auto 0;
   padding: 10px 20px;
   align-items: center;
-  border: none; }
+  border: none;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in; }
   button.github i {
     margin-right: 10px; }
+  button.github:hover {
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in; }
+  @media (min-width: 1024px) {
+    button.github {
+      margin-right: auto;
+      margin-left: 0; } }
 
 /* Intro Home */
 .intro.home {
@@ -253,67 +264,89 @@ button.github {
       min-height: auto; } }
 
 .portfolio {
-  padding-top: 8%; }
-  .portfolio .zoltash {
+  padding: 8% 0; }
+  .portfolio .project {
     width: 96%;
     margin: 0 auto;
-    padding: 4%;
-    background-color: #161d2b;
-    background-image: url("../img/bg-stars.svg");
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: cover; }
-    .portfolio .zoltash .content {
+    padding: 4%; }
+    .portfolio .project .content {
       padding: 2% 4% 4%;
       text-align: center; }
-      .portfolio .zoltash .content p, .portfolio .zoltash .content h2 {
-        color: #fff; }
-      .portfolio .zoltash .content p {
+      .portfolio .project .content p {
         max-width: 700px;
         margin: 0 auto; }
-      .portfolio .zoltash .content button.github {
-        margin-left: auto;
-        margin-right: auto;
-        background-color: #2531e3;
-        transition-property: all;
-        transition-duration: 0.3s;
-        transition-timing-function: ease-in; }
-        .portfolio .zoltash .content button.github i {
-          color: white; }
-        .portfolio .zoltash .content button.github:hover {
-          transition-property: all;
-          transition-duration: 0.3s;
-          transition-timing-function: ease-in;
-          background-color: #121a90; }
-    .portfolio .zoltash .visual figure {
+    .portfolio .project .visual figure {
       position: relative;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center; }
-      .portfolio .zoltash .visual figure .hand {
+      .portfolio .project .visual figure .main-vis {
+        width: 100%;
         max-width: 400px; }
     @media (min-width: 1024px) {
-      .portfolio .zoltash {
+      .portfolio .project {
         display: flex;
         align-items: center; }
-        .portfolio .zoltash .visual {
+        .portfolio .project .visual {
           width: 50vw; }
-          .portfolio .zoltash .visual figure .hand {
-            max-width: unset; }
-        .portfolio .zoltash .content {
+        .portfolio .project .content {
           width: 50vw;
           text-align: left;
           padding: 4%; }
-          .portfolio .zoltash .content button.github {
-            margin-right: 0;
-            margin-left: 0; }
-          .portfolio .zoltash .content p {
+          .portfolio .project .content p {
             margin: 0; } }
     @media (min-width: 1200px) {
-      .portfolio .zoltash .content {
+      .portfolio .project .content {
         width: 60vw; }
-      .portfolio .zoltash .visual {
+      .portfolio .project .visual {
         width: 40vw; } }
+  .portfolio .project.zoltash {
+    background-color: #161d2b;
+    background-image: url("../img/bg-stars.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover; }
+    .portfolio .project.zoltash .content p, .portfolio .project.zoltash .content h2 {
+      color: #fff; }
+    .portfolio .project.zoltash .content button.github {
+      background-color: #2531e3; }
+      .portfolio .project.zoltash .content button.github i {
+        color: white; }
+      .portfolio .project.zoltash .content button.github:hover {
+        background-color: #121a90; }
+    @media (min-width: 1024px) {
+      .portfolio .project.zoltash .visual figure .main-vis {
+        max-width: 100%; } }
+
+.project.assets {
+  background-color: #59adbf;
+  background-image: url("../img/fart-cloud.svg");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: cover; }
+  .project.assets button.github {
+    background-color: #e54948; }
+    .project.assets button.github i, .project.assets button.github p {
+      color: #fff; }
+    .project.assets button.github:hover {
+      background-color: #ae1a19; }
+
+.project.buddy {
+  border: 1px solid #c2d7e8;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px; }
+  .project.buddy button.github {
+    background-color: #c2d7e8; }
+    .project.buddy button.github:hover {
+      background-color: #78a6cc; }
+  @media (min-width: 1024px) {
+    .project.buddy .visual figure .main-vis {
+      max-width: 100%; } }
+  @media (min-width: 1400px) {
+    .project.buddy .content {
+      width: 50vw; }
+    .project.buddy .visual {
+      width: 50vw; } }
 
 /*# sourceMappingURL=styles.css.map */
