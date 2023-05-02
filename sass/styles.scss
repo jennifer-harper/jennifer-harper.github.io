@@ -126,9 +126,13 @@ text-align: center;
   #navigation .navLinks ul li a{
       text-decoration: none;
   }
-  
+  #navigation .navLinks ul li a svg{
+    width: 30px;
+}
+#navigation .navLinks ul li a:hover svg,
   #navigation .navLinks ul li a:hover{
       color:#aa0000;
+      fill:#aa0000;
   }
   @media (min-width: 320px) and (max-width: 767px) {
       #navigation .navLinks ul{
@@ -250,7 +254,6 @@ button.github{
 /* Intro Home */
 
 .intro{
-  &.home{
     min-height: calc(100vh - 100px);
     display: flex;
 
@@ -284,20 +287,40 @@ button.github{
 
       .content{
         padding: 4%;
+        a{ 
+          color:#aa0000; 
+          fill:  #aa0000; 
+          @include transition();
+        }
+        a:hover span,
+        a:hover{
+          color:#000;
+          fill:#000;
+          @include transition();
+        }
         p{   
           max-width: 700px; 
-          margin: 0 auto 20px;    
-          a span{
-            font-size:30px;
-            margin-left:10px;
-            font-weight:bold;        
+          margin: 0 auto 20px;  
           }
-          a:hover span,
-          a:hover{
-            color:red
+      
+
+        ul{
+          display: flex;
+          padding-left: 0;
+          align-items: center;
+          justify-content: center;
+          li{
+            list-style: none;
+            padding-right: 20px;
+            svg{
+              width: 40px;
+            }
           }
-        } 
+        }
       }
+
+
+
       @media (min-width:1024px){
         display: flex;
         text-align: left; 
@@ -306,7 +329,9 @@ button.github{
         .visual{
           position: relative;
           width:50vw;
-
+          &.cta{
+            width: 65vw;
+          }
           div{
             .dev-logo{max-width: 150px;}
             .media-box{
@@ -315,12 +340,19 @@ button.github{
           }
 
         }
+
         .content{
           width: 50vw;
+          &.cta{
+            width: 35vw;
+          }
           margin: 0 20px 20px;
           p{
             max-width: 750px;
             margin:0 0 20px 0;
+          }
+          ul{
+            justify-content: left;
           }
         }
       } 
@@ -346,7 +378,7 @@ button.github{
     @media (min-height:1366px) and (max-height:1367px){
       min-height:auto;
     }
-  }
+  
 }
 
 
@@ -435,6 +467,7 @@ button.github{
     }
   }
 }
+
 .project.assets{
   background-color: #59adbf;
   @include bg-img(url("../img/fart-cloud.svg"), 0 100%, cover);
@@ -445,15 +478,22 @@ button.github{
       background-color: darken(#e54948, 20%);
     }
   }
+  .visual{
+    figure{
+      .main-vis{
+        @media (min-width:1024px){
+          max-width: 300px;
+        }
+      }
+    }
+  }
 }
 
 
 
 
 .project.buddy{
-  border: 1px solid #c2d7e8;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
+  background-color: #f3f7fa;
   button.github{
     background-color: #c2d7e8;
     &:hover{

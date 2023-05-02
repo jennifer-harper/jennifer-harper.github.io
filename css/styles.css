@@ -95,8 +95,13 @@ h2 {
 #navigation .navLinks ul li a {
   text-decoration: none; }
 
+#navigation .navLinks ul li a svg {
+  width: 30px; }
+
+#navigation .navLinks ul li a:hover svg,
 #navigation .navLinks ul li a:hover {
-  color: #aa0000; }
+  color: #aa0000;
+  fill: #aa0000; }
 
 @media (min-width: 320px) and (max-width: 767px) {
   #navigation .navLinks ul {
@@ -200,67 +205,89 @@ button.github {
       margin-left: 0; } }
 
 /* Intro Home */
-.intro.home {
+.intro {
   min-height: calc(100vh - 100px);
   display: flex; }
-  .intro.home .wrapper {
+  .intro .wrapper {
     padding: 20px;
     width: 100%;
     text-align: center;
     max-width: 1300px;
     margin: 0 auto; }
-    .intro.home .wrapper .visual div {
+    .intro .wrapper .visual div {
       position: relative; }
-      .intro.home .wrapper .visual div .media-box {
+      .intro .wrapper .visual div .media-box {
         min-height: 50vh; }
-      .intro.home .wrapper .visual div .me img {
+      .intro .wrapper .visual div .me img {
         width: 100%; }
-      .intro.home .wrapper .visual div .dev-logo {
+      .intro .wrapper .visual div .dev-logo {
         max-width: 100px;
         position: absolute;
         left: -20px;
         bottom: -20px;
         z-index: 1; }
-    .intro.home .wrapper .content {
+    .intro .wrapper .content {
       padding: 4%; }
-      .intro.home .wrapper .content p {
+      .intro .wrapper .content a {
+        color: #aa0000;
+        fill: #aa0000;
+        transition-property: all;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in; }
+      .intro .wrapper .content a:hover span,
+      .intro .wrapper .content a:hover {
+        color: #000;
+        fill: #000;
+        transition-property: all;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in; }
+      .intro .wrapper .content p {
         max-width: 700px;
         margin: 0 auto 20px; }
-        .intro.home .wrapper .content p a span {
-          font-size: 30px;
-          margin-left: 10px;
-          font-weight: bold; }
-        .intro.home .wrapper .content p a:hover span,
-        .intro.home .wrapper .content p a:hover {
-          color: red; }
+      .intro .wrapper .content ul {
+        display: flex;
+        padding-left: 0;
+        align-items: center;
+        justify-content: center; }
+        .intro .wrapper .content ul li {
+          list-style: none;
+          padding-right: 20px; }
+          .intro .wrapper .content ul li svg {
+            width: 40px; }
     @media (min-width: 1024px) {
-      .intro.home .wrapper {
+      .intro .wrapper {
         display: flex;
         text-align: left;
         align-items: center; }
-        .intro.home .wrapper .visual {
+        .intro .wrapper .visual {
           position: relative;
           width: 50vw; }
-          .intro.home .wrapper .visual div .dev-logo {
+          .intro .wrapper .visual.cta {
+            width: 65vw; }
+          .intro .wrapper .visual div .dev-logo {
             max-width: 150px; }
-          .intro.home .wrapper .visual div .media-box {
+          .intro .wrapper .visual div .media-box {
             min-height: 60vh; }
-        .intro.home .wrapper .content {
+        .intro .wrapper .content {
           width: 50vw;
           margin: 0 20px 20px; }
-          .intro.home .wrapper .content p {
+          .intro .wrapper .content.cta {
+            width: 35vw; }
+          .intro .wrapper .content p {
             max-width: 750px;
-            margin: 0 0 20px 0; } }
+            margin: 0 0 20px 0; }
+          .intro .wrapper .content ul {
+            justify-content: left; } }
     @media (min-width: 1200px) {
-      .intro.home .wrapper .visual {
+      .intro .wrapper .visual {
         width: 40vw; }
-      .intro.home .wrapper .content {
+      .intro .wrapper .content {
         width: 60vw; } }
     @media (min-width: 1600px) {
-      .intro.home .wrapper .visual .media-box {
+      .intro .wrapper .visual .media-box {
         min-height: 55vh; } }
   @media (min-height: 1366px) and (max-height: 1367px) {
-    .intro.home {
+    .intro {
       min-height: auto; } }
 
 .portfolio {
@@ -331,11 +358,12 @@ button.github {
       color: #fff; }
     .project.assets button.github:hover {
       background-color: #ae1a19; }
+  @media (min-width: 1024px) {
+    .project.assets .visual figure .main-vis {
+      max-width: 300px; } }
 
 .project.buddy {
-  border: 1px solid #c2d7e8;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px; }
+  background-color: #f3f7fa; }
   .project.buddy button.github {
     background-color: #c2d7e8; }
     .project.buddy button.github:hover {
