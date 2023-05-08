@@ -184,6 +184,7 @@ svg {
       min-height: 40vh; } }
 
 /*******************************/
+button.deployed,
 button.github {
   display: flex;
   margin: 30px auto 0;
@@ -193,13 +194,16 @@ button.github {
   transition-property: all;
   transition-duration: 0.3s;
   transition-timing-function: ease-in; }
+  button.deployed i,
   button.github i {
     margin-right: 10px; }
+  button.deployed:hover,
   button.github:hover {
     transition-property: all;
     transition-duration: 0.3s;
     transition-timing-function: ease-in; }
   @media (min-width: 1024px) {
+    button.deployed,
     button.github {
       margin-right: auto;
       margin-left: 0; } }
@@ -311,6 +315,11 @@ button.github {
       .portfolio .project .visual figure .main-vis {
         width: 100%;
         max-width: 400px; }
+    @media (min-width: 800px) {
+      .portfolio .project .content div div {
+        display: flex; }
+        .portfolio .project .content div div a:last-of-type {
+          margin-left: 20px; } }
     @media (min-width: 1024px) {
       .portfolio .project {
         display: flex;
@@ -342,6 +351,14 @@ button.github {
         color: white; }
       .portfolio .project.zoltash .content button.github:hover {
         background-color: #121a90; }
+    .portfolio .project.zoltash .content button.deployed {
+      background-color: transparent;
+      border: 2px solid #fff; }
+      .portfolio .project.zoltash .content button.deployed i {
+        color: #fff; }
+      .portfolio .project.zoltash .content button.deployed:hover {
+        background-color: #2531e3;
+        border: 2px solid #2531e3; }
     @media (min-width: 1024px) {
       .portfolio .project.zoltash .visual figure .main-vis {
         max-width: 100%; } }
