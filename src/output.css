@@ -249,6 +249,15 @@
   .sticky {
     position: sticky;
   }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
   .isolate {
     isolation: isolate;
   }
@@ -462,8 +471,14 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
+  .h-\[40px\] {
+    height: 40px;
+  }
   .h-\[100px\] {
     height: 100px;
+  }
+  .h-\[100vw\] {
+    height: 100vw;
   }
   .h-screen {
     height: 100vh;
@@ -480,14 +495,14 @@
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
-  .w-100 {
-    width: calc(var(--spacing) * 100);
-  }
   .w-\[20px\] {
     width: 20px;
   }
   .w-\[30px\] {
     width: 30px;
+  }
+  .w-\[40px\] {
+    width: 40px;
   }
   .w-\[90\%\] {
     width: 90%;
@@ -1101,6 +1116,9 @@
   .bg-\(color\:--my-color\) {
     background-color: var(--my-color);
   }
+  .bg-\[\#4a5bcf\] {
+    background-color: #4a5bcf;
+  }
   .bg-\[\#0088cc\] {
     background-color: #0088cc;
   }
@@ -1324,14 +1342,23 @@
   .px-\[20px\] {
     padding-inline: 20px;
   }
+  .py-\[4vw\] {
+    padding-block: 4vw;
+  }
   .py-\[10px\] {
     padding-block: 10px;
   }
   .py-\[20px\] {
     padding-block: 20px;
   }
+  .ps-\[1vw\] {
+    padding-inline-start: 1vw;
+  }
   .pe-\[10px\] {
     padding-inline-end: 10px;
+  }
+  .pb-\[2vw\] {
+    padding-bottom: 2vw;
   }
   .pb-\[4vw\] {
     padding-bottom: 4vw;
@@ -1942,6 +1969,20 @@
       }
     }
   }
+  .group-hover\:fill-red-700 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        fill: var(--color-red-700);
+      }
+    }
+  }
+  .group-hover\:text-red-700 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-red-700);
+      }
+    }
+  }
   .group-hover\:duration-200 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -1981,9 +2022,34 @@
       }
     }
   }
+  .md\:top-\[-1vw\] {
+    @media (width >= 48rem) {
+      top: -1vw;
+    }
+  }
+  .md\:right-\[-1vw\] {
+    @media (width >= 48rem) {
+      right: -1vw;
+    }
+  }
+  .md\:bottom-\[-1vw\] {
+    @media (width >= 48rem) {
+      bottom: -1vw;
+    }
+  }
   .md\:mb-\[6vw\] {
     @media (width >= 48rem) {
       margin-bottom: 6vw;
+    }
+  }
+  .md\:h-\[50vw\] {
+    @media (width >= 48rem) {
+      height: 50vw;
+    }
+  }
+  .md\:h-auto {
+    @media (width >= 48rem) {
+      height: auto;
     }
   }
   .md\:w-\[6vw\] {
@@ -2004,6 +2070,11 @@
   .md\:w-\[40\%\] {
     @media (width >= 48rem) {
       width: 40%;
+    }
+  }
+  .md\:w-\[50\%\] {
+    @media (width >= 48rem) {
+      width: 50%;
     }
   }
   .md\:w-\[80\%\] {
@@ -2119,14 +2190,16 @@
 .spotzer-css {
   h1, h2, h3 {
     font-family: 'Montagu Slab', serif;
-    font-weight: 300;
-    line-height: 1.1em;
-    span {
-      font-weight: 600;
-    }
   }
   p, a {
     font-family: 'Raleway', sans-serif;
+  }
+}
+h1, h2, h3 {
+  font-weight: 300;
+  line-height: 1.1em;
+  span {
+    font-weight: 600;
   }
 }
 .media-box {
@@ -2144,140 +2217,33 @@
     object-position: 50% 50%;
   }
 }
-.personal {
-  padding: 0 4% 4%;
-}
-.personal section {
-  margin-bottom: 20px;
-}
-.personal section div[class^='col'] {
-  padding: 0;
-}
-.personal .svg-btn-wrap a text {
-  fill: #011147;
-}
-.personal .svg-btn-wrap a .initials {
-  fill: #e9e4de;
-}
-.personal .svg-btn-wrap a .bg {
-  fill: #011147;
-}
-.personal .svg-btn-wrap a .initials, .personal .svg-btn-wrap a .bg {
-  transition-property: all;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in;
-}
-.personal .svg-btn-wrap a:hover .initials, .personal .svg-btn-wrap a:hover .bg {
-  transition-property: all;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in;
-}
-.personal .svg-btn-wrap a:hover .initials {
-  fill: #011147;
-}
-.personal .svg-btn-wrap a:hover .bg {
-  fill: #e9e4de;
-}
-.educapps .svg-btn-wrap {
-  margin-top: 0px;
-  margin-bottom: 40px;
-  z-index: 10;
-}
-@media (min-width: 768px) {
-  .educapps .svg-btn-wrap {
-    margin-bottom: -80px;
-  }
-}
-@media (min-width: 992px) {
-  .educapps .svg-btn-wrap {
-    margin-bottom: unset;
-  }
-}
-@media (min-width: 992px) {
-  .educapps .svg-btn-wrap .svg-btn {
-    bottom: unset;
-    top: -80px;
-    left: 85%;
-  }
-}
-.educapps .row div[class^='col'].bg-color figure #audio {
-  padding: 4%;
-  padding-bottom: 0;
-  width: 80%;
-  margin-left: 10%;
-}
-.educapps .row div[class^='col'].bg-color figure #audio .st0 {
+.educapps #audio .st0 {
   fill: #f59688;
 }
-.educapps .row div[class^='col'].bg-color figure #audio .st1 {
+.educapps #audio .st1 {
   fill: #ef5152;
 }
-.educapps .row div[class^='col'].bg-color figure #audio .st2 {
+.educapps #audio .st2 {
   fill: #54c0aa;
 }
-.educapps .row div[class^='col'].bg-color figure #audio .st3 {
+.educapps #audio .st3 {
   fill: #9dd6c8;
 }
-.educapps .row div[class^='col'].bg-color figure #audio .st4 {
+.educapps #audio .st4 {
   fill: #37469a;
 }
-.educapps .row div[class^='col'].bg-color figure #audio .st5 {
+.educapps #audio .st5 {
   fill: #f5f1e9;
 }
-.educapps .row div[class^='col'].bg-color figure #audio .eye, .educapps .row div[class^='col'].bg-color figure #audio .head {
+.educapps #audio .eye, .educapps #audio .head {
   transform: translateY(-2px);
 }
-.educapps .row div[class^='col'].bg-color figure #audio .ear {
+.educapps #audio .ear {
   transform: translateX(2px);
 }
-.educapps .row div[class^='col'].bg-color figure #educapps-fig {
+.educapps #educapps-fig {
   fill: #e9e4de;
   margin-left: -1px;
-}
-.educapps .row div[class^='col'].bg-color figure div {
-  background-color: #4a5bcf;
-}
-@media (min-width: 768px) {
-  .educapps .row div[class^='col'] figure {
-    height: 100%;
-    min-height: 0;
-  }
-}
-.bsylvia .svg-btn-wrap {
-  margin-top: 40px;
-  z-index: 10;
-}
-@media (min-width: 768px) {
-  .bsylvia .svg-btn-wrap {
-    margin-top: -80px;
-  }
-}
-@media (min-width: 992px) {
-  .bsylvia .svg-btn-wrap {
-    margin-top: unset;
-  }
-}
-@media (min-width: 992px) {
-  .bsylvia .svg-btn-wrap .svg-btn {
-    left: 0%;
-    top: -80px;
-  }
-}
-.bsylvia .row figure {
-  height: 50vh;
-}
-.bsylvia .row figure .media-box img {
-  min-height: 100%;
-}
-@media (min-width: 992px) {
-  .bsylvia .row figure {
-    height: 70vh;
-  }
-}
-@media (min-width: 1200px) {
-  .bsylvia .row figure {
-    height: 90vh;
-  }
 }
 @property --tw-translate-x {
   syntax: "*";
