@@ -31,9 +31,11 @@
     --text-8xl--line-height: 1;
     --text-9xl: 8rem;
     --text-9xl--line-height: 1;
+    --tracking-wide: 0.025em;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-spin: spin 1s linear infinite;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -254,9 +256,6 @@
   }
   .right-0 {
     right: calc(var(--spacing) * 0);
-  }
-  .bottom-0 {
-    bottom: calc(var(--spacing) * 0);
   }
   .isolate {
     isolation: isolate;
@@ -640,8 +639,17 @@
   .transform-none {
     transform: none;
   }
+  .animate-\[spin_3s_linear_infinite\] {
+    animation: spin 3s linear infinite;
+  }
+  .animate-\[spin_3s_linear_infinite_reverse\] {
+    animation: spin 3s linear infinite reverse;
+  }
   .animate-none {
     animation: none;
+  }
+  .animate-spin {
+    animation: var(--animate-spin);
   }
   .touch-pinch-zoom {
     --tw-pinch-zoom: pinch-zoom;
@@ -1434,6 +1442,10 @@
     --tw-leading: 1;
     line-height: 1;
   }
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
+  }
   .text-balance {
     text-wrap: balance;
   }
@@ -1955,6 +1967,20 @@
   .transform-view {
     transform-box: view-box;
   }
+  .group-hover\:animate-\[spin_1s_linear_infinite\] {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        animation: spin 1s linear infinite;
+      }
+    }
+  }
+  .group-hover\:animate-spin {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        animation: var(--animate-spin);
+      }
+    }
+  }
   .group-hover\:bg-red-700 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -1983,6 +2009,22 @@
       }
     }
   }
+  .group-hover\:invert {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        --tw-invert: invert(100%);
+        filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+      }
+    }
+  }
+  .group-hover\:invert-20 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        --tw-invert: invert(20%);
+        filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+      }
+    }
+  }
   .group-hover\:duration-200 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -1996,6 +2038,13 @@
       @media (hover: hover) {
         --tw-ease: var(--ease-in);
         transition-timing-function: var(--ease-in);
+      }
+    }
+  }
+  .hover\:bg-\[\#040433\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #040433;
       }
     }
   }
@@ -2030,11 +2079,6 @@
   .md\:right-\[-1vw\] {
     @media (width >= 48rem) {
       right: -1vw;
-    }
-  }
-  .md\:bottom-\[-1vw\] {
-    @media (width >= 48rem) {
-      bottom: -1vw;
     }
   }
   .md\:mb-\[6vw\] {
@@ -2346,6 +2390,10 @@ h1, h2, h3 {
   syntax: "*";
   inherits: false;
 }
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-ordinal {
   syntax: "*";
   inherits: false;
@@ -2525,4 +2573,9 @@ h1, h2, h3 {
 @property --tw-contain-style {
   syntax: "*";
   inherits: false;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
