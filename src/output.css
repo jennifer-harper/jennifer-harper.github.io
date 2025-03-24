@@ -261,11 +261,17 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
+  }
   .isolate {
     isolation: isolate;
   }
   .isolation-auto {
     isolation: auto;
+  }
+  .z-100 {
+    z-index: 100;
   }
   .z-auto {
     z-index: auto;
@@ -1155,6 +1161,9 @@
   .bg-blue-950 {
     background-color: var(--color-blue-950);
   }
+  .bg-red-400 {
+    background-color: var(--color-red-400);
+  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -1293,6 +1302,9 @@
   }
   .fill-none {
     fill: none;
+  }
+  .fill-red-200 {
+    fill: var(--color-red-200);
   }
   .fill-red-400 {
     fill: var(--color-red-400);
@@ -1826,6 +1838,16 @@
   .transition-normal {
     transition-behavior: normal;
   }
+  .delay-75 {
+    transition-delay: 75ms;
+  }
+  .delay-200 {
+    transition-delay: 200ms;
+  }
+  .duration-100 {
+    --tw-duration: 100ms;
+    transition-duration: 100ms;
+  }
   .duration-200 {
     --tw-duration: 200ms;
     transition-duration: 200ms;
@@ -1988,6 +2010,13 @@
   .transform-view {
     transform-box: view-box;
   }
+  .group-hover\:w-\[200vw\] {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        width: 200vw;
+      }
+    }
+  }
   .group-hover\:bg-red-700 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -2006,6 +2035,21 @@
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         fill: var(--color-red-400);
+      }
+    }
+  }
+  .group-hover\:fill-red-700 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        fill: var(--color-red-700);
+      }
+    }
+  }
+  .group-hover\:duration-100 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        --tw-duration: 100ms;
+        transition-duration: 100ms;
       }
     }
   }
@@ -2031,6 +2075,16 @@
         --tw-scale-x: 95%;
         --tw-scale-y: 95%;
         --tw-scale-z: 95%;
+        scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+  }
+  .hover\:scale-99 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-scale-x: 99%;
+        --tw-scale-y: 99%;
+        --tw-scale-z: 99%;
         scale: var(--tw-scale-x) var(--tw-scale-y);
       }
     }
@@ -2063,6 +2117,13 @@
       }
     }
   }
+  .hover\:fill-red-700 {
+    &:hover {
+      @media (hover: hover) {
+        fill: var(--color-red-700);
+      }
+    }
+  }
   .hover\:text-red-400 {
     &:hover {
       @media (hover: hover) {
@@ -2082,6 +2143,14 @@
       @media (hover: hover) {
         --tw-invert: invert(20%);
         filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+      }
+    }
+  }
+  .hover\:duration-100 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-duration: 100ms;
+        transition-duration: 100ms;
       }
     }
   }
@@ -2196,16 +2265,6 @@
       width: 80%;
     }
   }
-  .md\:w-\[full\] {
-    @media (width >= 48rem) {
-      width: full;
-    }
-  }
-  .md\:w-full {
-    @media (width >= 48rem) {
-      width: 100%;
-    }
-  }
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
@@ -2254,6 +2313,11 @@
   .md\:py-\[6vw\] {
     @media (width >= 48rem) {
       padding-block: 6vw;
+    }
+  }
+  .md\:py-\[9vw\] {
+    @media (width >= 48rem) {
+      padding-block: 9vw;
     }
   }
   .md\:ps-\[1vw\] {
