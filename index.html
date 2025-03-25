@@ -8,6 +8,7 @@
     <title>Jennifer Harper's Website</title>
     <link rel="icon" href="img/favicon.png" type="image/x-icon" />
     <link href="src/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
 
   <body class="bg-[#e9e4de] text-[#040433] text-[1em]">
@@ -83,6 +84,30 @@
             </div>
           </div>
         </a>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="/img/gentledental.webp" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/urbanhub.webp" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/fenestra.webp" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/wellyfun.webp" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/Pitchdeck.webp" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/LGcreative.webp" />
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
       </section>
 
       <section class="" id="dev-academy">
@@ -258,5 +283,21 @@
         </section>
       </div>
     </main>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      })
+    </script>
   </body>
 </html>
