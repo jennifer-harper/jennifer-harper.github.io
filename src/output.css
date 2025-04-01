@@ -8,7 +8,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-200: oklch(0.885 0.062 18.334);
     --color-red-400: oklch(0.704 0.191 22.216);
     --color-red-500: oklch(0.637 0.237 25.331);
     --color-red-700: oklch(0.505 0.213 27.518);
@@ -35,6 +34,7 @@
     --text-9xl: 8rem;
     --text-9xl--line-height: 1;
     --font-weight-medium: 500;
+    --font-weight-bold: 700;
     --tracking-wide: 0.025em;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
@@ -380,11 +380,20 @@
   .my-\[40px\] {
     margin-block: 40px;
   }
+  .ms-\[10px\] {
+    margin-inline-start: 10px;
+  }
+  .mt-\[1vw\] {
+    margin-top: 1vw;
+  }
   .mt-\[2vw\] {
     margin-top: 2vw;
   }
   .mt-\[4vw\] {
     margin-top: 4vw;
+  }
+  .mt-\[6vw\] {
+    margin-top: 6vw;
   }
   .mt-\[20px\] {
     margin-top: 20px;
@@ -520,6 +529,9 @@
   }
   .w-\[90\%\] {
     width: 90%;
+  }
+  .w-\[100\%\] {
+    width: 100%;
   }
   .w-\[100px\] {
     width: 100px;
@@ -1160,9 +1172,6 @@
   .bg-blue-950 {
     background-color: var(--color-blue-950);
   }
-  .bg-red-400 {
-    background-color: var(--color-red-400);
-  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -1299,8 +1308,8 @@
   .fill-none {
     fill: none;
   }
-  .fill-red-200 {
-    fill: var(--color-red-200);
+  .fill-red-400 {
+    fill: var(--color-red-400);
   }
   .fill-red-700 {
     fill: var(--color-red-700);
@@ -1380,8 +1389,17 @@
   .py-\[60px\] {
     padding-block: 60px;
   }
+  .ps-\[1vw\] {
+    padding-inline-start: 1vw;
+  }
+  .ps-\[30\%\] {
+    padding-inline-start: 30%;
+  }
   .pe-\[10px\] {
     padding-inline-end: 10px;
+  }
+  .pt-\[6vw\] {
+    padding-top: 6vw;
   }
   .pb-\[2vw\] {
     padding-bottom: 2vw;
@@ -1463,6 +1481,10 @@
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
   }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
@@ -2084,6 +2106,11 @@
       }
     }
   }
+  .md\:fixed {
+    @media (width >= 48rem) {
+      position: fixed;
+    }
+  }
   .md\:top-\[-1vw\] {
     @media (width >= 48rem) {
       top: -1vw;
@@ -2134,6 +2161,11 @@
       margin-bottom: 6vw;
     }
   }
+  .md\:flex {
+    @media (width >= 48rem) {
+      display: flex;
+    }
+  }
   .md\:h-\[50vw\] {
     @media (width >= 48rem) {
       height: 50vw;
@@ -2179,9 +2211,24 @@
       width: 80%;
     }
   }
+  .md\:flex-col {
+    @media (width >= 48rem) {
+      flex-direction: column;
+    }
+  }
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
+    }
+  }
+  .md\:flex-wrap {
+    @media (width >= 48rem) {
+      flex-wrap: wrap;
+    }
+  }
+  .md\:items-center {
+    @media (width >= 48rem) {
+      align-items: center;
     }
   }
   .md\:p-\[2vw\] {
@@ -2214,6 +2261,11 @@
       padding-inline: 4vw;
     }
   }
+  .md\:px-\[6vw\] {
+    @media (width >= 48rem) {
+      padding-inline: 6vw;
+    }
+  }
   .md\:py-\[1vw\] {
     @media (width >= 48rem) {
       padding-block: 1vw;
@@ -2229,14 +2281,34 @@
       padding-block: 6vw;
     }
   }
+  .md\:py-\[8vw\] {
+    @media (width >= 48rem) {
+      padding-block: 8vw;
+    }
+  }
   .md\:py-\[9vw\] {
     @media (width >= 48rem) {
       padding-block: 9vw;
     }
   }
+  .md\:py-\[10vw\] {
+    @media (width >= 48rem) {
+      padding-block: 10vw;
+    }
+  }
+  .md\:py-\[12vw\] {
+    @media (width >= 48rem) {
+      padding-block: 12vw;
+    }
+  }
   .md\:ps-\[1vw\] {
     @media (width >= 48rem) {
       padding-inline-start: 1vw;
+    }
+  }
+  .md\:ps-\[30\%\] {
+    @media (width >= 48rem) {
+      padding-inline-start: 30%;
     }
   }
   .md\:pe-\[1vw\] {
@@ -2249,6 +2321,21 @@
       padding-inline-end: 6vw;
     }
   }
+  .md\:pt-\[8vw\] {
+    @media (width >= 48rem) {
+      padding-top: 8vw;
+    }
+  }
+  .md\:pt-\[10vw\] {
+    @media (width >= 48rem) {
+      padding-top: 10vw;
+    }
+  }
+  .md\:pt-\[12vw\] {
+    @media (width >= 48rem) {
+      padding-top: 12vw;
+    }
+  }
   .md\:pb-0 {
     @media (width >= 48rem) {
       padding-bottom: calc(var(--spacing) * 0);
@@ -2257,6 +2344,11 @@
   .md\:pb-\[6vw\] {
     @media (width >= 48rem) {
       padding-bottom: 6vw;
+    }
+  }
+  .md\:text-center {
+    @media (width >= 48rem) {
+      text-align: center;
     }
   }
   .md\:text-left {
@@ -2299,6 +2391,11 @@
       height: 2vw;
     }
   }
+  .lg\:h-\[3vw\] {
+    @media (width >= 64rem) {
+      height: 3vw;
+    }
+  }
   .lg\:h-\[6vw\] {
     @media (width >= 64rem) {
       height: 6vw;
@@ -2307,6 +2404,11 @@
   .lg\:w-\[2vw\] {
     @media (width >= 64rem) {
       width: 2vw;
+    }
+  }
+  .lg\:w-\[3vw\] {
+    @media (width >= 64rem) {
+      width: 3vw;
     }
   }
   .lg\:w-\[6vw\] {
