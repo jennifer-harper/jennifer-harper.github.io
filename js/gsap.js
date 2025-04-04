@@ -35,17 +35,37 @@ document.addEventListener('DOMContentLoaded', (event) => {
         start: 'top top+=' + navHeight,
         end: 'bottom top',
         invalidateOnRefresh: true,
-        markers: marker,
+        // markers: marker,
       },
     })
     gsap.set('#ambitious-pin img', { yPercent: 0 })
     tl.to('#ambitious-pin img', { yPercent: -48 })
   }
 
+  function secondSection() {
+    let tl = gsap.timeline({
+      defaults: { duration: 1, ease: 'none' },
+      scrollTrigger: {
+        trigger: '#gentle-pin',
+        pin: true,
+        anticipatePin: 1,
+        scrub: 1,
+        start: 'top top+=' + navHeight,
+        end: 'bottom top',
+        invalidateOnRefresh: true,
+        //markers: marker,
+      },
+    })
+    gsap.set('#gentle-pin .animated', { position: 'absolute', top: 0, left: 0 })
+    tl.to('#gentle-pin .animated', { bottom: 0, top: 'unset' })
+  }
+
   mm.add('(min-width: 1024px)', () => {
     firstSection()
+    secondSection()
   })
   mm.add('(max-width: 1023px)', () => {
     gsap.set('#ambitious-pin img', { yPercent: 0 })
+    gsap.set('#gentle-pin .animated', { position: 'relative' })
   })
 })
