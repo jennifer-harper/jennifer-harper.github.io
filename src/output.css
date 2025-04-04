@@ -34,7 +34,6 @@
     --text-9xl: 8rem;
     --text-9xl--line-height: 1;
     --font-weight-medium: 500;
-    --font-weight-bold: 700;
     --tracking-wide: 0.025em;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
@@ -383,9 +382,6 @@
   .ms-\[10px\] {
     margin-inline-start: 10px;
   }
-  .mt-\[1vw\] {
-    margin-top: 1vw;
-  }
   .mt-\[2vw\] {
     margin-top: 2vw;
   }
@@ -497,11 +493,17 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
+  .h-\[53vw\] {
+    height: 53vw;
+  }
   .h-\[100px\] {
     height: 100px;
   }
   .h-\[100vw\] {
     height: 100vw;
+  }
+  .h-full {
+    height: 100%;
   }
   .h-screen {
     height: 100vh;
@@ -1025,6 +1027,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .overflow-hidden {
+    overflow: hidden;
+  }
   .scroll-auto {
     scroll-behavior: auto;
   }
@@ -1183,6 +1188,12 @@
   }
   .bg-red-700 {
     background-color: var(--color-red-700);
+  }
+  .bg-transparent {
+    background-color: transparent;
+  }
+  .bg-white {
+    background-color: var(--color-white);
   }
   .-bg-conic {
     --tw-gradient-position: in oklab;
@@ -1392,14 +1403,17 @@
   .ps-\[1vw\] {
     padding-inline-start: 1vw;
   }
-  .ps-\[30\%\] {
-    padding-inline-start: 30%;
-  }
   .pe-\[10px\] {
     padding-inline-end: 10px;
   }
   .pt-\[6vw\] {
     padding-top: 6vw;
+  }
+  .pt-\[8vw\] {
+    padding-top: 8vw;
+  }
+  .pt-\[10px\] {
+    padding-top: 10px;
   }
   .pb-\[2vw\] {
     padding-bottom: 2vw;
@@ -1481,10 +1495,6 @@
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
-  }
-  .font-bold {
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
   }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
@@ -1726,6 +1736,10 @@
   }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .ring {
@@ -2090,6 +2104,13 @@
       }
     }
   }
+  .hover\:text-red-700 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-red-700);
+      }
+    }
+  }
   .hover\:duration-200 {
     &:hover {
       @media (hover: hover) {
@@ -2106,9 +2127,22 @@
       }
     }
   }
+  .hover\:ease-in-out {
+    &:hover {
+      @media (hover: hover) {
+        --tw-ease: var(--ease-in-out);
+        transition-timing-function: var(--ease-in-out);
+      }
+    }
+  }
   .md\:fixed {
     @media (width >= 48rem) {
       position: fixed;
+    }
+  }
+  .md\:relative {
+    @media (width >= 48rem) {
+      position: relative;
     }
   }
   .md\:top-\[-1vw\] {
@@ -2151,6 +2185,11 @@
       margin-top: 6vw;
     }
   }
+  .md\:mt-\[8vw\] {
+    @media (width >= 48rem) {
+      margin-top: 8vw;
+    }
+  }
   .md\:mb-0 {
     @media (width >= 48rem) {
       margin-bottom: calc(var(--spacing) * 0);
@@ -2161,9 +2200,14 @@
       margin-bottom: 6vw;
     }
   }
-  .md\:flex {
+  .md\:h-\[35vw\] {
     @media (width >= 48rem) {
-      display: flex;
+      height: 35vw;
+    }
+  }
+  .md\:h-\[38vw\] {
+    @media (width >= 48rem) {
+      height: 38vw;
     }
   }
   .md\:h-\[50vw\] {
@@ -2209,11 +2253,6 @@
   .md\:w-\[80\%\] {
     @media (width >= 48rem) {
       width: 80%;
-    }
-  }
-  .md\:flex-col {
-    @media (width >= 48rem) {
-      flex-direction: column;
     }
   }
   .md\:flex-row {
@@ -2291,11 +2330,6 @@
       padding-block: 9vw;
     }
   }
-  .md\:py-\[10vw\] {
-    @media (width >= 48rem) {
-      padding-block: 10vw;
-    }
-  }
   .md\:py-\[12vw\] {
     @media (width >= 48rem) {
       padding-block: 12vw;
@@ -2319,6 +2353,16 @@
   .md\:pe-\[6vw\] {
     @media (width >= 48rem) {
       padding-inline-end: 6vw;
+    }
+  }
+  .md\:pt-\[\.8vw\] {
+    @media (width >= 48rem) {
+      padding-top: .8vw;
+    }
+  }
+  .md\:pt-\[1vw\] {
+    @media (width >= 48rem) {
+      padding-top: 1vw;
     }
   }
   .md\:pt-\[8vw\] {
