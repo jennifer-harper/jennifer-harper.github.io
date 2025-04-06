@@ -1,28 +1,26 @@
 document.addEventListener('DOMContentLoaded', (event) => {
   gsap.registerPlugin(ScrollTrigger, CustomEase, ScrollSmoother)
-  const smoother = ScrollSmoother.create({
-    wrapper: '#smooth-wrapper',
-    content: '#smooth-content',
-    smooth: 2,
-    normalizeScroll: true,
-    effects: true,
-    preventDefault: true,
-  })
 
-  // Function to recalculate navHeight on window resize
+  let smoother
+  let navHeight = 0
+
   function updateNavHeight() {
     let nav = $('#logo').innerHeight()
     navHeight = nav + 40
-    console.log(navHeight)
-    ScrollTrigger.refresh()
+    console.log('navHeight:', navHeight)
   }
-  updateNavHeight()
 
-  window.addEventListener('resize', updateNavHeight)
-
-  //   GSAP animations
-  let mm = gsap.matchMedia()
-  var marker = { startColor: 'green', endColor: 'red', fontSize: '18px', fontWeight: 'bold', indent: 20, zIndex: 2000 }
+  function createSmoother() {
+    if (smoother) smoother.kill()
+    smoother = ScrollSmoother.create({
+      wrapper: '#smooth-wrapper',
+      content: '#smooth-content',
+      smooth: 2,
+      normalizeScroll: true,
+      effects: true,
+      preventDefault: true,
+    })
+  }
 
   function firstSection() {
     let tl = gsap.timeline({
@@ -35,7 +33,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         start: 'top top+=' + navHeight,
         end: 'bottom top',
         invalidateOnRefresh: true,
-        // markers: marker,
       },
     })
     gsap.set('#ambitious-pin img', { yPercent: 0 })
@@ -53,19 +50,46 @@ document.addEventListener('DOMContentLoaded', (event) => {
         start: 'top top+=' + navHeight,
         end: 'bottom top',
         invalidateOnRefresh: true,
-        //markers: marker,
       },
     })
     gsap.set('#gentle-pin .animated', { position: 'absolute', top: 0, left: 0 })
     tl.to('#gentle-pin .animated', { bottom: 0, top: 'unset' })
   }
 
-  mm.add('(min-width: 1024px)', () => {
-    firstSection()
-    secondSection()
+  function setupAnimations() {
+    let mm = gsap.matchMedia()
+
+    mm.add('(min-width: 1024px)', () => {
+      updateNavHeight()
+      createSmoother()
+      firstSection()
+      secondSection()
+    })
+
+    mm.add('(max-width: 1023px)', () => {
+      updateNavHeight()
+      if (smoother) smoother.kill()
+      gsap.set('#ambitious-pin img', { yPercent: 0 })
+      gsap.set('#gentle-pin .animated', { position: 'relative', top: '0', bottom: 'unset' })
+      ScrollTrigger.getAll().forEach((t) => t.kill())
+    })
+  }
+
+  // Setup
+  setupAnimations()
+
+  // Ensure everything refreshes fully on load even if no scrolling happened
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      ScrollTrigger.refresh()
+    }, 100)
   })
-  mm.add('(max-width: 1023px)', () => {
-    gsap.set('#ambitious-pin img', { yPercent: 0 })
-    gsap.set('#gentle-pin .animated', { position: 'relative' })
+
+  // Optional: Refresh on resize / viewport change
+  window.addEventListener('resize', () => {
+    clearTimeout(window._resizeTimeout)
+    window._resizeTimeout = setTimeout(() => {
+      ScrollTrigger.refresh()
+    }, 250)
   })
 })
