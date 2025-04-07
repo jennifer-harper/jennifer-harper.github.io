@@ -1578,6 +1578,9 @@
   .text-\[\#040433\] {
     color: #040433;
   }
+  .text-red-300 {
+    color: var(--color-red-300);
+  }
   .text-red-700 {
     color: var(--color-red-700);
   }
@@ -2444,20 +2447,9 @@
       width: 6vw;
     }
   }
-  .lg\:flex-row {
-    @media (width >= 64rem) {
-      flex-direction: row;
-    }
-  }
   .lg\:pe-\[1vw\] {
     @media (width >= 64rem) {
       padding-inline-end: 1vw;
-    }
-  }
-  .lg\:text-8xl {
-    @media (width >= 64rem) {
-      font-size: var(--text-8xl);
-      line-height: var(--tw-leading, var(--text-8xl--line-height));
     }
   }
   .lg\:text-9xl {
@@ -2473,16 +2465,16 @@ body {
     .text-lg {
       font-size: 2em;
     }
-    .md\:text-9xl {
+    .lg\:text-9xl, .md\:text-9xl {
       font-size: 6em;
     }
-    .md\:text-8xl {
+    .lg\:text-8xl, .md\:text-8xl {
       font-size: 5em;
     }
-    .md\:text-7xl {
+    .lg\:text-7xl, .md\:text-7xl {
       font-size: 4em;
     }
-    .md\:text-6xl {
+    .lg\:text-6xl, .md\:text-6xl {
       font-size: 3em;
     }
   }
@@ -2517,51 +2509,55 @@ h1, h2, h3 {
     object-position: 50% 50%;
   }
 }
-.educapps #audio .st0 {
-  fill: #f59688;
-}
-.educapps #audio .st1 {
-  fill: #ef5152;
-}
-.educapps #audio .st2 {
-  fill: #54c0aa;
-}
-.educapps #audio .st3 {
-  fill: #9dd6c8;
-}
-.educapps #audio .st4 {
-  fill: #37469a;
-}
-.educapps #audio .st5 {
-  fill: #f5f1e9;
-}
-.educapps #audio .eye, .educapps #audio .head {
-  transform: translateY(-2px);
-}
-.educapps #audio .ear {
-  transform: translateX(2px);
-}
-.educapps #educapps-fig {
-  fill: #e9e4de;
-  margin-left: -1px;
+.educapps {
+  #audio {
+    .st0 {
+      fill: #f59688;
+    }
+    .st1 {
+      fill: #ef5152;
+    }
+    .st2 {
+      fill: #54c0aa;
+    }
+    .st3 {
+      fill: #9dd6c8;
+    }
+    .st4 {
+      fill: #37469a;
+    }
+    .st5 {
+      fill: #f5f1e9;
+    }
+    .eye, .head {
+      transform: translateY(-2px);
+    }
+    .ear {
+      transform: translateX(2px);
+    }
+  }
+  #educapps-fig {
+    fill: #e9e4de;
+    margin-left: -1px;
+  }
 }
 .swiper {
   width: 100%;
   height: 100%;
-}
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 @property --tw-translate-x {
   syntax: "*";
