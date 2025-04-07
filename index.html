@@ -56,12 +56,15 @@
     </nav>
 
     <main class="p-[20px] md:p-[6vw]">
-      <section class="flex flex-col py-[20px] md:py-[10vw] text-center items-center w-full" id="me">
+      <section class="flex flex-col py-[20px] md:py-[10vw] text-center items-center w-full relative" id="me">
         <h1 class="pb-[4vw] text-4xl md:text-9xl leading-[1.1]">Jennifer <span>Harper</span></h1>
         <p class="md:w-[80%]">
           Hi, I'm Jen — a front-end developer and web designer based in Wellington. With a keen eye for design and an attention to detail (edging on obsessive), I specialise in building engaging web applications, crafting user-friendly experiences, and solving UX challenges. Explore my timeline and
           work experience below, or feel free to connect with me on LinkedIn!
         </p>
+        <div class="mt-[40px] w-[50%] md:w-[12vw] md:h-[12vw] rounded-full overflow-hidden md:absolute md:right-[2vw] md:bottom-[-5vw]">
+          <img src="img/square-profile-me.jpg" alt="My 'professional' profile picture" />
+        </div>
       </section>
 
       <section id="ambitious" class="text-white bg-blue-950 p-[20px] md:p-[6vw] group" id="spotzer">
@@ -139,7 +142,7 @@
 
           <figure class="dev w-full mt-[6vw] relative">
             <img src="/portfolio-dev-academy/img/team.jpg" class="w-full" alt="Dev cohort Kahu" />
-            <img src="/portfolio-dev-academy/img/dev-academy-logo.jpg" alt="Dev Academy Logo" class="md:w-10vw absolute top-0 right-0 md:top-[-1vw] md:right-[-1vw]" />
+            <img src="/portfolio-dev-academy/img/dev-academy-logo.jpg" alt="Dev Academy Logo" class="w-[30%] md:w-[10vw] absolute top-0 right-0 md:top-[-1vw] md:right-[-1vw]" />
           </figure>
         </a>
       </section>
@@ -182,9 +185,10 @@
             </p>
           </div>
         </section>
+
         <section class="branding educapps mb-[2vw]" id="educapps">
-          <a href="/portfolio-education-app/" target="_blank" class="w-full flex flex-col md:flex-row hover:scale-95 hover:duration-200 hover ease-in hover:ease-in duration-200">
-            <div class="bg-[#4a5bcf] pb-[2vw] w-full md:w-[50%]">
+          <a href="/portfolio-education-app/" target="_blank" class="w-full flex flex-col md:flex-row group">
+            <div class="bg-[#4a5bcf] pb-[2vw] w-full md:w-[50%] group-hover:bg-blue-950 hover:ease-in hover:duration-200 ease-in duration-200">
               <svg id="audio" x="0px" y="0px" viewBox="0 0 200 168.6" style="enable-background: new 0 0 200 168.6" xml:space="preserve">
                 <path
                   class="st0"
@@ -272,14 +276,14 @@
               </svg>
             </div>
             <div class="media-box w-full h-[100vw] md:w-[50%] md:h-auto bg-[#4a5bcf]">
-              <img src="/img/img-three.jpg" class="" alt="Educapps branding image, young girl sitting down looking at cellphone screen" />
+              <img src="/img/img-three.jpg" class="zoom" alt="Educapps branding image, young girl sitting down looking at cellphone screen" />
             </div>
           </a>
         </section>
 
         <section class="" id="beauty">
-          <a href="/portfolio-beauty/" target="_blank" class="w-full flex flex-col md:flex-row hover:scale-95 hover:duration-200 ease-in hover:ease-in duration-200">
-            <div class="media-box w-full h-[100vw] md:w-[50%] md:h-[50vw]">
+          <a href="/portfolio-beauty/" target="_blank" class="w-full flex flex-col md:flex-row bg-red-700 group">
+            <div class="media-box w-full h-[100vw] md:w-[50%] md:h-[50vw] group-hover:opacity-70 hover:ease-in hover:duration-200 ease-in duration-200">
               <img src="/img/model-02.jpg" class="zoom" alt="Beauty branding image, you lady with wet hair posing with hand under chin." />
             </div>
             <div class="media-box w-full h-[100vw] md:w-[50%] md:h-auto">
@@ -289,6 +293,7 @@
         </section>
       </div>
     </main>
+
     <footer class="flex flex-row justify-end w-full p-[20px] md:px-[6vw]">
       <a href="/" class="inline-flex p-0 group items-center" aria-label="Return to home page">
         <p>Jennifer Harper &copy; <span id="year"></span></p>
@@ -301,9 +306,11 @@
         </figure>
       </a>
     </footer>
-    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Initialize Swiper -->
-    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+
+    <script src="js/swiper.js"></script>
+    <script src="js/home-gsap.js"></script>
   </body>
 </html>
