@@ -260,36 +260,6 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
-  .right-\[-2vw\] {
-    right: -2vw;
-  }
-  .right-\[2vw\] {
-    right: 2vw;
-  }
-  .bottom-0 {
-    bottom: calc(var(--spacing) * 0);
-  }
-  .bottom-\[-5vw\] {
-    bottom: -5vw;
-  }
-  .bottom-\[-6vw\%\] {
-    bottom: -6vw%;
-  }
-  .bottom-\[-6vw\] {
-    bottom: -6vw;
-  }
-  .bottom-\[-20\%\] {
-    bottom: -20%;
-  }
-  .bottom-\[-25\%\] {
-    bottom: -25%;
-  }
-  .bottom-\[-50\%\] {
-    bottom: -50%;
-  }
-  .bottom-\[25\%\] {
-    bottom: 25%;
-  }
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
@@ -527,12 +497,6 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
-  .h-\[12vw\] {
-    height: 12vw;
-  }
-  .h-\[50vw\] {
-    height: 50vw;
-  }
   .h-\[100px\] {
     height: 100px;
   }
@@ -557,12 +521,6 @@
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
-  .w-\[6vw\] {
-    width: 6vw;
-  }
-  .w-\[12vw\] {
-    width: 12vw;
-  }
   .w-\[20px\] {
     width: 20px;
   }
@@ -574,9 +532,6 @@
   }
   .w-\[50\%\] {
     width: 50%;
-  }
-  .w-\[50vw\] {
-    width: 50vw;
   }
   .w-\[60px\] {
     width: 60px;
