@@ -36,6 +36,9 @@ body {
     .md\:text-6xl {
       font-size: 3em;
     }
+    .lg\:p-5 {
+      padding: 40px;
+    }
   }
 }
 
