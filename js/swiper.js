@@ -17,6 +17,17 @@ var swiper = new Swiper('.mySwiper', {
   },
 })
 
+var swiper = new Swiper('.mySwiperFree', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+})
+
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('year').textContent = new Date().getFullYear()
 })
