@@ -12,7 +12,6 @@
     --color-red-300: oklch(80.8% 0.114 19.571);
     --color-red-400: oklch(70.4% 0.191 22.216);
     --color-red-700: oklch(50.5% 0.213 27.518);
-    --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-blue-900: oklch(37.9% 0.146 265.522);
     --color-blue-950: oklch(28.2% 0.091 267.935);
     --color-white: #fff;
@@ -520,9 +519,6 @@
   .text-\[\#040433\] {
     color: #040433;
   }
-  .text-amber-300 {
-    color: var(--color-amber-300);
-  }
   .text-red-700 {
     color: var(--color-red-700);
   }
@@ -871,11 +867,6 @@
       padding-block: 9vw;
     }
   }
-  .md\:py-\[10vw\] {
-    @media (width >= 48rem) {
-      padding-block: 10vw;
-    }
-  }
   .md\:ps-\[1vw\] {
     @media (width >= 48rem) {
       padding-inline-start: 1vw;
@@ -1115,7 +1106,8 @@ h1, h2, h3 {
   }
 }
 .swiper {
-  height: 100%;
+  width: 100%;
+  height: auto;
   .swiper-slide {
     text-align: center;
     font-size: 18px;
